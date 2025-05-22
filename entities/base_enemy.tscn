@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50e2r2k33oc5"]
+
+[ext_resource type="Script" path="res://entities/BaseEnemy.gd" id="1_r6r03"]
+[ext_resource type="Script" path="res://entities/Texture.gd" id="2_81fno"]
+
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("_enemy_texture", "_floor_detection", "_wall_detection")]
+script = ExtResource("1_r6r03")
+_enemy_texture = NodePath("Texture")
+_floor_detection = NodePath("FloorDetection")
+_wall_detection = NodePath("WallDetection")
+_enemy_type = 2
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+script = ExtResource("2_81fno")
+
+[node name="WallDetection" type="RayCast2D" parent="."]
+
+[node name="FloorDetection" type="RayCast2D" parent="."]

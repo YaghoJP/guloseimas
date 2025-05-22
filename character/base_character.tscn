@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr0mtq3wsbk00"]
+
+[ext_resource type="Script" path="res://character/base_character.gd" id="1_eqo74"]
+[ext_resource type="Script" path="res://character/texture.gd" id="2_om2bm"]
+
+[node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture")]
+script = ExtResource("1_eqo74")
+_character_texture = NodePath("texture")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+[node name="texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
+script = ExtResource("2_om2bm")
+_character = NodePath("..")
+
+[connection signal="animation_finished" from="texture" to="texture" method="_on_animation_finished"]

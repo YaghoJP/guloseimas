@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dixypyy3utxhh"]
+
+[ext_resource type="PackedScene" uid="uid://cpjjq2ulsqkw2" path="res://interactables/base_interactable.tscn" id="1_5t3cw"]
+[ext_resource type="Script" path="res://interactables/Alavanca/lever_interactable.gd" id="2_8ypo2"]
+[ext_resource type="Texture2D" uid="uid://bbvol7amxrayi" path="res://interactables/Alavanca/alavanca_chao.png" id="3_5lqbp"]
+[ext_resource type="AudioStream" uid="uid://c24yp4wj5on2f" path="res://interactables/Alavanca/alavanca.mp3" id="4_jmirc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rs5p"]
+atlas = ExtResource("3_5lqbp")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58aub"]
+atlas = ExtResource("3_5lqbp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpgbi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rs5p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58aub")
+}],
+"loop": true,
+"name": &"interact",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81bhh"]
+size = Vector2(24, 15)
+
+[node name="LeverInteractable" node_paths=PackedStringArray("_sound", "_texture", "_interact_timer") instance=ExtResource("1_5t3cw")]
+script = ExtResource("2_8ypo2")
+_interact_duration = 3.0
+_interact_position = Vector2(0, 220)
+_interact_stop = 3.0
+_sound = NodePath("AudioStreamPlayer2D")
+_texture = NodePath("Texture")
+_interact_timer = NodePath("InteractTimer")
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_rpgbi")
+animation = &"interact"
+autoplay = "idle"
+frame_progress = 0.369174
+
+[node name="Collision" parent="." index="1"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_81bhh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("4_jmirc")
+volume_db = -10.0

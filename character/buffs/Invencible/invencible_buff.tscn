@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1cfibvlnkf70"]
+
+[ext_resource type="PackedScene" uid="uid://13g1l2moijf5" path="res://character/buffs/base_buff.tscn" id="1_jfxbm"]
+[ext_resource type="Script" path="res://InvencibleBuff.gd" id="2_2l4ra"]
+
+[node name="InvencibleBuff" instance=ExtResource("1_jfxbm")]
+script = ExtResource("2_2l4ra")
+
+[node name="BuffTimer" parent="." index="0"]
+wait_time = 10.0

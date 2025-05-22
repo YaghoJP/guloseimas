@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc4oybkcnimh4"]
+
+[ext_resource type="PackedScene" uid="uid://dg6bxwlh3khq1" path="res://collectables/PowerUps/base_power_up_collect.tscn" id="1_xovqy"]
+[ext_resource type="Texture2D" uid="uid://xycomfvg0781" path="res://collectables/PowerUps/Coffe/copinho_cafe/copinho_cafe.png" id="2_s584c"]
+
+[sub_resource type="GDScript" id="GDScript_mdtua"]
+script/source = "extends BasePowerUpCollectable
+class_name CoffePowerUp
+
+const _AGILLITY_BUFF = preload(\"res://character/buffs/Agillity/agility_buff.tscn\")
+
+func _on_body_entered(_body) -> void:
+	if _body is UTFanoCharacter:
+		print(\"Pode Consumir\")
+		_consume(_body)		#lembrar da animação após ser feito o consumo
+		queue_free()
+		
+func _consume(_body) -> void:
+	var _agillity_buff = _AGILLITY_BUFF.instantiate()
+	_body.add_child(_agillity_buff)
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maaon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s584c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeep8"]
+size = Vector2(16, 18)
+
+[node name="CoffePowerUp" instance=ExtResource("1_xovqy")]
+script = SubResource("GDScript_mdtua")
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_maaon")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("RectangleShape2D_aeep8")

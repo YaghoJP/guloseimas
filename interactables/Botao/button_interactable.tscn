@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5e1lbhmgewwi"]
+
+[ext_resource type="PackedScene" uid="uid://cpjjq2ulsqkw2" path="res://interactables/base_interactable.tscn" id="1_qfpti"]
+[ext_resource type="Script" path="res://interactables/Botao/button_interactable.gd" id="2_uxbck"]
+[ext_resource type="Texture2D" uid="uid://cvhsee0wabc24" path="res://interactables/Botao/botao.png" id="3_76w8v"]
+[ext_resource type="Texture2D" uid="uid://nj3et5dbgtfv" path="res://interactables/Botao/botao-abaixado.png" id="4_88rpi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efcdd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_76w8v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_76w8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_88rpi")
+}],
+"loop": false,
+"name": &"interact",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q747"]
+size = Vector2(21, 11)
+
+[node name="ButtonInteractable" node_paths=PackedStringArray("_texture", "_interact_timer") instance=ExtResource("1_qfpti")]
+script = ExtResource("2_uxbck")
+_interact_duration = 3.0
+_interact_position = Vector2(0, 220)
+_interact_stop = 3.0
+_texture = NodePath("Texture")
+_interact_timer = NodePath("InteractTimer")
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_efcdd")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Collision" parent="." index="1"]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_2q747")

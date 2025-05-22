@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhdvnjuexgiy5"]
+
+[ext_resource type="PackedScene" uid="uid://13g1l2moijf5" path="res://character/buffs/base_buff.tscn" id="1_aucds"]
+[ext_resource type="Script" path="res://character/buffs/DoubleJump/double_jump_buff.gd" id="2_yf5x0"]
+
+[node name="DoubleJumpBuff" instance=ExtResource("1_aucds")]
+script = ExtResource("2_yf5x0")

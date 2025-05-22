@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8622qm0jhtdw"]
+
+[ext_resource type="Script" path="res://interface/hud.gd" id="1_k1rmk"]
+[ext_resource type="FontFile" uid="uid://dn85xow4aphek" path="res://fonts/RevMiniPixel.ttf" id="2_fx3t0"]
+[ext_resource type="Texture2D" uid="uid://po3cujd8i0og" path="res://collectables/Coin/jujuba_roxa_grande_2.png" id="2_vxye3"]
+[ext_resource type="Texture2D" uid="uid://bviu5oqplei51" path="res://interface/LogoUTF/logo_utfpr_64X32_campus.png" id="4_omy8i"]
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("_timer_counter", "_coin_counter", "_clock_timer")]
+script = ExtResource("1_k1rmk")
+_timer_counter = NodePath("Control/Container/TimerContainer/TimerCounter")
+_coin_counter = NodePath("Control/Container/CoinContainer/CoinLabel")
+_clock_timer = NodePath("Control/ClockTimer")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="CoinContainer" type="HBoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CoinIcon" type="TextureRect" parent="Control/Container/CoinContainer"]
+layout_mode = 2
+texture = ExtResource("2_vxye3")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="CoinLabel" type="Label" parent="Control/Container/CoinContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_fx3t0")
+theme_override_font_sizes/font_size = 16
+text = "0000"
+
+[node name="TimerContainer" type="HBoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TimerLabel" type="Label" parent="Control/Container/TimerContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_fx3t0")
+theme_override_font_sizes/font_size = 16
+text = "TIME:
+"
+
+[node name="TimerCounter" type="Label" parent="Control/Container/TimerContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_fx3t0")
+theme_override_font_sizes/font_size = 16
+text = "00:00"
+
+[node name="ClockTimer" type="Timer" parent="Control"]
+autostart = true
+
+[node name="LogoIcon" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 755.0
+offset_top = 452.0
+offset_right = 755.0
+offset_bottom = 452.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("4_omy8i")
+expand_mode = 2
+stretch_mode = 3
+
+[connection signal="timeout" from="Control/ClockTimer" to="." method="_on_clock_timer_timeout"]

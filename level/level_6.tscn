@@ -1,0 +1,269 @@
+[gd_scene load_steps=6 format=3 uid="uid://mde8wie4lq7l"]
+
+[ext_resource type="PackedScene" uid="uid://cv42usodk4xdv" path="res://level/base_level.tscn" id="1_rlfs7"]
+[ext_resource type="PackedScene" uid="uid://ct02pcncw0t6j" path="res://entities/DamageArea/residuo/residuo_area.tscn" id="2_40ppr"]
+[ext_resource type="Texture2D" uid="uid://cla4c5iugtr06" path="res://entities/DamageArea/residuo/residuo.png" id="3_e6uqs"]
+[ext_resource type="PackedScene" uid="uid://cna223l6131tw" path="res://animatable/Plataform/platform.tscn" id="4_hb5tu"]
+[ext_resource type="PackedScene" uid="uid://xnkycub4ih2c" path="res://animatable/FallingPlatform/falling_platform.tscn" id="5_1cn78"]
+
+[node name="level_6" instance=ExtResource("1_rlfs7")]
+_scene_path = "res://level/level_6.tscn"
+
+[node name="BackGround" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 65539, 2, 0, 3, 2, 0, -65533, 2, 0, -65534, 2, 0, 2, 2, 0, 1, 2, 0, 0, 2, 0, -65536, 2, 0, -65535, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0)
+
+[node name="ResiduoArea" parent="DamageArea" index="0" instance=ExtResource("2_40ppr")]
+position = Vector2(16, 449)
+
+[node name="ResiduoArea2" parent="DamageArea" index="1" instance=ExtResource("2_40ppr")]
+position = Vector2(48, 449)
+
+[node name="ResiduoArea3" parent="DamageArea" index="2" instance=ExtResource("2_40ppr")]
+position = Vector2(80, 449)
+
+[node name="ResiduoArea4" parent="DamageArea" index="3" instance=ExtResource("2_40ppr")]
+position = Vector2(112, 449)
+
+[node name="ResiduoArea5" parent="DamageArea" index="4" instance=ExtResource("2_40ppr")]
+position = Vector2(144, 449)
+
+[node name="ResiduoArea6" parent="DamageArea" index="5" instance=ExtResource("2_40ppr")]
+position = Vector2(176, 449)
+
+[node name="ResiduoArea7" parent="DamageArea" index="6" instance=ExtResource("2_40ppr")]
+position = Vector2(208, 449)
+
+[node name="ResiduoArea8" parent="DamageArea" index="7" instance=ExtResource("2_40ppr")]
+position = Vector2(240, 449)
+
+[node name="ResiduoArea9" parent="DamageArea" index="8" instance=ExtResource("2_40ppr")]
+position = Vector2(272, 449)
+
+[node name="ResiduoArea10" parent="DamageArea" index="9" instance=ExtResource("2_40ppr")]
+position = Vector2(304, 449)
+
+[node name="ResiduoArea11" parent="DamageArea" index="10" instance=ExtResource("2_40ppr")]
+position = Vector2(336, 449)
+
+[node name="ResiduoArea12" parent="DamageArea" index="11" instance=ExtResource("2_40ppr")]
+position = Vector2(368, 449)
+
+[node name="ResiduoArea13" parent="DamageArea" index="12" instance=ExtResource("2_40ppr")]
+position = Vector2(399, 449)
+
+[node name="ResiduoArea14" parent="DamageArea" index="13" instance=ExtResource("2_40ppr")]
+position = Vector2(431, 449)
+
+[node name="ResiduoArea15" parent="DamageArea" index="14" instance=ExtResource("2_40ppr")]
+position = Vector2(463, 449)
+
+[node name="ResiduoArea16" parent="DamageArea" index="15" instance=ExtResource("2_40ppr")]
+position = Vector2(495, 449)
+
+[node name="ResiduoArea17" parent="DamageArea" index="16" instance=ExtResource("2_40ppr")]
+position = Vector2(527, 449)
+
+[node name="ResiduoArea18" parent="DamageArea" index="17" instance=ExtResource("2_40ppr")]
+position = Vector2(559, 449)
+
+[node name="ResiduoArea19" parent="DamageArea" index="18" instance=ExtResource("2_40ppr")]
+position = Vector2(591, 449)
+
+[node name="ResiduoArea20" parent="DamageArea" index="19" instance=ExtResource("2_40ppr")]
+position = Vector2(623, 449)
+
+[node name="ResiduoArea21" parent="DamageArea" index="20" instance=ExtResource("2_40ppr")]
+position = Vector2(655, 449)
+
+[node name="ResiduoArea22" parent="DamageArea" index="21" instance=ExtResource("2_40ppr")]
+position = Vector2(687, 449)
+
+[node name="ResiduoArea23" parent="DamageArea" index="22" instance=ExtResource("2_40ppr")]
+position = Vector2(719, 449)
+
+[node name="ResiduoArea24" parent="DamageArea" index="23" instance=ExtResource("2_40ppr")]
+position = Vector2(751, 449)
+
+[node name="ResiduoArea25" parent="DamageArea" index="24" instance=ExtResource("2_40ppr")]
+position = Vector2(783, 449)
+
+[node name="Residuo" type="Sprite2D" parent="DamageArea" index="25"]
+position = Vector2(16, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo2" type="Sprite2D" parent="DamageArea" index="26"]
+position = Vector2(48, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo3" type="Sprite2D" parent="DamageArea" index="27"]
+position = Vector2(80, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo4" type="Sprite2D" parent="DamageArea" index="28"]
+position = Vector2(112, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo5" type="Sprite2D" parent="DamageArea" index="29"]
+position = Vector2(144, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo6" type="Sprite2D" parent="DamageArea" index="30"]
+position = Vector2(176, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo7" type="Sprite2D" parent="DamageArea" index="31"]
+position = Vector2(208, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo8" type="Sprite2D" parent="DamageArea" index="32"]
+position = Vector2(240, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo9" type="Sprite2D" parent="DamageArea" index="33"]
+position = Vector2(272, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo10" type="Sprite2D" parent="DamageArea" index="34"]
+position = Vector2(304, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo11" type="Sprite2D" parent="DamageArea" index="35"]
+position = Vector2(336, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo12" type="Sprite2D" parent="DamageArea" index="36"]
+position = Vector2(368, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo13" type="Sprite2D" parent="DamageArea" index="37"]
+position = Vector2(400, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo14" type="Sprite2D" parent="DamageArea" index="38"]
+position = Vector2(432, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo15" type="Sprite2D" parent="DamageArea" index="39"]
+position = Vector2(464, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo16" type="Sprite2D" parent="DamageArea" index="40"]
+position = Vector2(496, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo17" type="Sprite2D" parent="DamageArea" index="41"]
+position = Vector2(528, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo18" type="Sprite2D" parent="DamageArea" index="42"]
+position = Vector2(560, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo19" type="Sprite2D" parent="DamageArea" index="43"]
+position = Vector2(592, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo20" type="Sprite2D" parent="DamageArea" index="44"]
+position = Vector2(624, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo21" type="Sprite2D" parent="DamageArea" index="45"]
+position = Vector2(656, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo22" type="Sprite2D" parent="DamageArea" index="46"]
+position = Vector2(688, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo23" type="Sprite2D" parent="DamageArea" index="47"]
+position = Vector2(720, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo24" type="Sprite2D" parent="DamageArea" index="48"]
+position = Vector2(752, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Residuo25" type="Sprite2D" parent="DamageArea" index="49"]
+position = Vector2(784, 481)
+texture = ExtResource("3_e6uqs")
+
+[node name="Platform" parent="Animatables" index="0"]
+position = Vector2(499, 408)
+_is_interactable = true
+_end_position = Vector2(150, 0)
+_mov_duration = 3.0
+
+[node name="Platform2" parent="Animatables" index="1" instance=ExtResource("4_hb5tu")]
+position = Vector2(632, 408)
+_is_interactable = true
+_end_position = Vector2(-120, 0)
+_mov_duration = 3.0
+
+[node name="FallingPlatform" parent="Animatables" index="2" instance=ExtResource("5_1cn78")]
+position = Vector2(112, 328)
+
+[node name="FallingPlatform2" parent="Animatables" index="3" instance=ExtResource("5_1cn78")]
+position = Vector2(168, 304)
+
+[node name="FallingPlatform3" parent="Animatables" index="4" instance=ExtResource("5_1cn78")]
+position = Vector2(224, 328)
+
+[node name="FallingPlatform4" parent="Animatables" index="5" instance=ExtResource("5_1cn78")]
+position = Vector2(280, 304)
+
+[node name="FallingPlatform5" parent="Animatables" index="6" instance=ExtResource("5_1cn78")]
+position = Vector2(336, 328)
+
+[node name="FallingPlatform6" parent="Animatables" index="7" instance=ExtResource("5_1cn78")]
+position = Vector2(560, 368)
+
+[node name="FallingPlatform7" parent="Animatables" index="8" instance=ExtResource("5_1cn78")]
+position = Vector2(608, 336)
+
+[node name="FallingPlatform8" parent="Animatables" index="9" instance=ExtResource("5_1cn78")]
+position = Vector2(560, 296)
+
+[node name="FallingPlatform9" parent="Animatables" index="10" instance=ExtResource("5_1cn78")]
+position = Vector2(608, 256)
+
+[node name="Platform3" parent="Animatables" index="11" instance=ExtResource("4_hb5tu")]
+position = Vector2(768, 192)
+scale = Vector2(0.725944, 1)
+_is_interactable = true
+_mov_duration = 2.0
+move_horizontal = false
+
+[node name="Terrain" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(983065, 65539, 2, 917529, 65539, 2, 851993, 65539, 2, 786457, 65539, 2, 720921, 65539, 2, 655385, 65539, 2, 589849, 65539, 2, 524313, 65539, 2, 458777, 65539, 2, 393241, 65539, 2, 327705, 65539, 2, 262169, 65539, 2, 196633, 65539, 2, 131097, 65539, 2, 65561, 65539, 2, 25, 65539, 2, -65511, 65539, 2, -65512, 65539, 2, -65513, 65539, 2, -65514, 65539, 2, -65515, 65539, 2, -65516, 65539, 2, -65517, 65539, 2, -65518, 65539, 2, -65519, 65539, 2, -65520, 65539, 2, -65521, 65539, 2, -65522, 65539, 2, -65523, 65539, 2, -65524, 65539, 2, -65525, 65539, 2, -65526, 65539, 2, -65527, 65539, 2, -65528, 65539, 2, -65529, 65539, 2, -65530, 65539, 2, -65531, 65539, 2, -65532, 65539, 2, -65533, 65539, 2, -65534, 65539, 2, -65535, 65539, 2, -65536, 65539, 2, -1, 65539, 2, 65535, 65539, 2, 131071, 65539, 2, 196607, 65539, 2, 262143, 65539, 2, 327679, 65539, 2, 393215, 65539, 2, 458751, 65539, 2, 524287, 65539, 2, 589823, 65539, 2, 655359, 65539, 2, 720895, 65539, 2, 786431, 65539, 2, 851967, 65539, 2, 917503, 65539, 2, 983039, 65539, 2, 1048575, 65539, 2, 1114111, 65539, 2, 1048576, 65539, 2, 1048577, 65539, 2, 1048578, 65539, 2, 1048579, 65539, 2, 1048580, 65539, 2, 1048581, 65539, 2, 1048582, 65539, 2, 1048583, 65539, 2, 1048584, 65539, 2, 1048585, 65539, 2, 1048586, 65539, 2, 1048587, 65539, 2, 1048588, 65539, 2, 1048589, 65539, 2, 1048590, 65539, 2, 1048591, 65539, 2, 1048592, 65539, 2, 1048593, 65539, 2, 1048594, 65539, 2, 1048595, 65539, 2, 1048596, 65539, 2, 1048597, 65539, 2, 1048598, 65539, 2, 1048599, 65539, 2, 1048600, 65539, 2, 1048601, 65539, 2, 196615, 65539, 2, 131079, 65539, 2, 65543, 65539, 2, 7, 65539, 2, 262151, 65539, 2, 262150, 65539, 2, 262149, 65539, 2, 262152, 65539, 2, 262153, 65539, 2, 589824, 65539, 2, 589825, 65539, 2, 20, 65539, 2, 65556, 65539, 2, 131092, 65539, 2, 196628, 65539, 2, 458772, 65539, 2, 458773, 65539, 2, 458774, 65539, 2, 458775, 65539, 2, 458776, 65539, 2, 131093, 0, 0, 131094, 2, 0)
+
+[node name="HUD" parent="." index="4"]
+default_minutes = 2
+default_seconds = 0
+
+[node name="DoorInteractable" parent="Interactables" index="0"]
+position = Vector2(701, 62)
+_path = "res://interface/finishLevel/finish_level.tscn"
+_last_path = "res://level/level_6.tscn"
+_next_path = "res://level/level_7.tscn"
+
+[node name="ButtonInteractable" parent="Interactables" index="1" node_paths=PackedStringArray("_interactable_object")]
+position = Vector2(690, 221)
+_interactable_object = NodePath("../../Animatables/Platform3")
+
+[node name="DoubleJumpPowerUp" parent="PowerUps" index="0"]
+position = Vector2(417, 142)
+
+[node name="CoinCollectable2" parent="Coins" index="0"]
+position = Vector2(21, 275)
+
+[node name="CoinCollectable3" parent="Coins" index="1"]
+position = Vector2(552, 112)
+
+[node name="CoinCollectable4" parent="Coins" index="2"]
+position = Vector2(750, 374)
+
+[node name="UTFanoCharacter" parent="Characters" index="0"]
+position = Vector2(192, 113)
+
+[node name="GDzinhaCharacter" parent="Characters" index="1"]
+position = Vector2(285, 112)

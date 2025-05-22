@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://chxvrxohkymlf"]
+
+[ext_resource type="Texture2D" uid="uid://dng3lyssnlio0" path="res://entities/Canhao/canhao.png" id="1_8rhvi"]
+[ext_resource type="Script" path="res://entities/Canhao/cannon.gd" id="1_fjtrm"]
+[ext_resource type="Texture2D" uid="uid://i7vq74iv4bm2" path="res://entities/Canhao/canhao_atirando.png" id="2_bl3vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlfh4"]
+size = Vector2(20, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhcut"]
+atlas = ExtResource("1_8rhvi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0dx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhcut")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8rhvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bl3vg")
+}],
+"loop": false,
+"name": &"shooting",
+"speed": 5.0
+}]
+
+[node name="Cannon" type="CharacterBody2D" node_paths=PackedStringArray("_bullet_spawn", "_texture")]
+script = ExtResource("1_fjtrm")
+_bullet_spawn = NodePath("spawn_bullet")
+_texture = NodePath("Texture")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_dlfh4")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r0dx5")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="spawn_bullet" type="Marker2D" parent="."]
+position = Vector2(12, 1)
+
+[node name="TimerShoot" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="TimerShoot" to="." method="_on_timer_shoot_timeout"]

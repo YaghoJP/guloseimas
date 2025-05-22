@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://cocehi1opcypt"]
+
+[ext_resource type="PackedScene" uid="uid://cv42usodk4xdv" path="res://level/base_level.tscn" id="1_sk18f"]
+[ext_resource type="PackedScene" uid="uid://xnkycub4ih2c" path="res://animatable/FallingPlatform/falling_platform.tscn" id="2_2s80i"]
+[ext_resource type="PackedScene" uid="uid://ipgxo2xb3mde" path="res://entities/DamageArea/spike/spike_damage_area.tscn" id="2_7tecl"]
+[ext_resource type="PackedScene" uid="uid://chxvrxohkymlf" path="res://entities/Canhao/cannon.tscn" id="3_irval"]
+
+[node name="level_5" instance=ExtResource("1_sk18f")]
+_scene_path = "res://level/level_5.tscn"
+
+[node name="BackGround" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 65539, 2, 0, 131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131072, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, -65533, 2, 0, -65534, 2, 0, -65535, 2, 0, -65536, 2, 0, 131071, 2, 0, 65535, 2, 0, 196607, 2, 0, 131076, 2, 0, 65540, 2, 0, 4, 2, 0, -65532, 2, 0, -1, 2, 0)
+
+[node name="SpikeDamageArea" parent="DamageArea" index="0" instance=ExtResource("2_7tecl")]
+position = Vector2(304, 304)
+
+[node name="SpikeDamageArea2" parent="DamageArea" index="1" instance=ExtResource("2_7tecl")]
+position = Vector2(336, 304)
+
+[node name="Platform" parent="Animatables" index="0"]
+position = Vector2(736, 264)
+scale = Vector2(0.68, 1)
+_end_position = Vector2(0, 150)
+_mov_duration = 3.0
+move_horizontal = false
+
+[node name="FallingPlatform" parent="Animatables" index="1" instance=ExtResource("2_2s80i")]
+position = Vector2(557, 360)
+
+[node name="FallingPlatform2" parent="Animatables" index="2" instance=ExtResource("2_2s80i")]
+position = Vector2(160, 256)
+
+[node name="FallingPlatform3" parent="Animatables" index="3" instance=ExtResource("2_2s80i")]
+position = Vector2(648, 112)
+
+[node name="FallingPlatform4" parent="Animatables" index="4" instance=ExtResource("2_2s80i")]
+position = Vector2(584, 112)
+
+[node name="FallingPlatform5" parent="Animatables" index="5" instance=ExtResource("2_2s80i")]
+position = Vector2(520, 112)
+
+[node name="FallingPlatform6" parent="Animatables" index="6" instance=ExtResource("2_2s80i")]
+position = Vector2(456, 112)
+
+[node name="FallingPlatform7" parent="Animatables" index="7" instance=ExtResource("2_2s80i")]
+position = Vector2(392, 112)
+
+[node name="FallingPlatform8" parent="Animatables" index="8" instance=ExtResource("2_2s80i")]
+position = Vector2(328, 112)
+
+[node name="FallingPlatform9" parent="Animatables" index="9" instance=ExtResource("2_2s80i")]
+position = Vector2(264, 112)
+
+[node name="FallingPlatform10" parent="Animatables" index="10" instance=ExtResource("2_2s80i")]
+position = Vector2(208, 88)
+
+[node name="FallingPlatform11" parent="Animatables" index="11" instance=ExtResource("2_2s80i")]
+position = Vector2(256, 216)
+
+[node name="FallingPlatform12" parent="Animatables" index="12" instance=ExtResource("2_2s80i")]
+position = Vector2(168, 152)
+
+[node name="Terrain" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(0, 65539, 2, 65536, 65539, 2, 131072, 65539, 2, 196608, 65539, 2, 262144, 65539, 2, 327680, 65539, 2, 393216, 65539, 2, 458752, 65539, 2, 524288, 65539, 2, 589824, 65539, 2, 655360, 65539, 2, 720896, 65539, 2, 786432, 65539, 2, 851968, 65539, 2, 917504, 65539, 2, 917505, 65539, 2, 917506, 65539, 2, 917507, 65539, 2, 917508, 65539, 2, 917509, 65539, 2, 917510, 65539, 2, 917511, 65539, 2, 917512, 65539, 2, 917513, 65539, 2, 917514, 65539, 2, 917515, 65539, 2, 917516, 65539, 2, 917517, 65539, 2, 917518, 65539, 2, 917519, 65539, 2, 917520, 65539, 2, 917521, 65539, 2, 917522, 65539, 2, 917523, 65539, 2, 917524, 65539, 2, 917525, 65539, 2, 917526, 65539, 2, 917527, 65539, 2, 917528, 65539, 2, 851992, 65539, 2, 786456, 65539, 2, 720920, 65539, 2, 655384, 65539, 2, 589848, 65539, 2, 524312, 65539, 2, 458776, 65539, 2, 393240, 65539, 2, 327704, 65539, 2, 262168, 65539, 2, 196632, 65539, 2, 131096, 65539, 2, 65560, 65539, 2, 24, 65539, 2, 23, 65539, 2, 22, 65539, 2, 21, 65539, 2, 20, 65539, 2, 19, 65539, 2, 18, 65539, 2, 17, 65539, 2, 16, 65539, 2, 15, 65539, 2, 14, 65539, 2, 13, 65539, 2, 12, 65539, 2, 11, 65539, 2, 10, 65539, 2, 9, 65539, 2, 8, 65539, 2, 7, 65539, 2, 6, 65539, 2, 5, 65539, 2, 4, 65539, 2, 3, 65539, 2, 2, 65539, 2, 1, 65539, 2, 851969, 65539, 1, 851970, 65539, 1, 851971, 65539, 1, 851972, 65539, 1, 851973, 65539, 1, 851974, 65539, 1, 851975, 65539, 1, 851976, 65539, 1, 851977, 65539, 1, 851978, 65539, 1, 851979, 65539, 1, 851980, 65539, 1, 851981, 65539, 1, 851982, 65539, 1, 851983, 65539, 1, 851984, 65539, 1, 851985, 65539, 1, 851986, 65539, 1, 851987, 65539, 1, 851988, 65539, 1, 851989, 65539, 1, 851990, 65539, 1, 851991, 65539, 1, 655361, 65539, 1, 655362, 65539, 1, 655363, 65539, 1, 655364, 65539, 1, 655365, 65539, 1, 655366, 65539, 1, 655367, 65539, 1, 655368, 65539, 1, 655369, 65539, 1, 655370, 65539, 1, 655371, 65539, 1, 655372, 65539, 1, 655373, 65539, 1, 655379, 65539, 1, 655380, 65539, 1, 655381, 65539, 1, 655382, 65539, 1, 655383, 65539, 1, 589845, 65539, 2, 589835, 65539, 2, 524299, 65539, 2, 589832, 65539, 2, 524296, 65539, 2, 458760, 65539, 2, 393224, 65539, 2, 262145, 65539, 2, 262146, 65539, 2, 262147, 65539, 2, 262148, 65539, 2, 786447, 65539, 2)
+
+[node name="HUD" parent="." index="4"]
+default_minutes = 1
+
+[node name="DoorInteractable" parent="Interactables" index="0"]
+position = Vector2(80, 112)
+_path = "res://interface/finishLevel/finish_level.tscn"
+_last_path = "res://level/level_5.tscn"
+_next_path = "res://level/level_6.tscn"
+
+[node name="ButtonInteractable" parent="Interactables" index="1"]
+position = Vector2(271, 189)
+_interact_position = Vector2(0, 150)
+
+[node name="DoubleJumpPowerUp" parent="PowerUps" index="0"]
+visible = false
+position = Vector2(-180, 273)
+
+[node name="CoinCollectable2" parent="Coins" index="0"]
+position = Vector2(750, 389)
+
+[node name="CoinCollectable3" parent="Coins" index="1"]
+position = Vector2(72, 200)
+
+[node name="CoinCollectable4" parent="Coins" index="2"]
+position = Vector2(648, 80)
+
+[node name="UTFanoCharacter" parent="Characters" index="0"]
+position = Vector2(50, 401)
+
+[node name="GDzinhaCharacter" parent="Characters" index="1"]
+position = Vector2(88, 400)
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+[node name="Cannon" parent="Enemies" index="0" instance=ExtResource("3_irval")]
+position = Vector2(45, 306)
+
+[node name="Cannon2" parent="Enemies" index="1" instance=ExtResource("3_irval")]
+position = Vector2(530, 402)

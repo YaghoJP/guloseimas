@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0q6rym8fqcoj"]
+
+[ext_resource type="Script" path="res://collectables/base_collectable.gd" id="1_mbjow"]
+
+[node name="BaseCollectable" type="Area2D" node_paths=PackedStringArray("_texture", "_song")]
+script = ExtResource("1_mbjow")
+_texture = NodePath("Texture")
+_song = NodePath("Song")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

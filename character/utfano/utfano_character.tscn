@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://b0cmg4alhlskw"]
+
+[ext_resource type="PackedScene" uid="uid://dr0mtq3wsbk00" path="res://character/base_character.tscn" id="1_hhpsi"]
+[ext_resource type="Script" path="res://character/utfano/utfano_character.gd" id="2_3c44o"]
+[ext_resource type="Texture2D" uid="uid://dn5ts0o0qgakl" path="res://character/utfano/parado/perfil_olho_aberto.png" id="3_omqp0"]
+[ext_resource type="Texture2D" uid="uid://b3d4gf6cc55v5" path="res://character/utfano/dano/dano.png" id="3_yrb60"]
+[ext_resource type="Texture2D" uid="uid://cx6otvdvncqsn" path="res://character/utfano/parado/perfil_olho_fechado.png" id="4_8m2se"]
+[ext_resource type="Texture2D" uid="uid://cxtenduvkak48" path="res://character/utfano/pulando/jump.png" id="5_5aeng"]
+[ext_resource type="Texture2D" uid="uid://dx7gbvbfctbdm" path="res://character/utfano/correndo/run.png" id="6_7vrlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwpi0"]
+size = Vector2(17, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7guu"]
+atlas = ExtResource("6_7vrlv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10ubp"]
+atlas = ExtResource("6_7vrlv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbvv3"]
+atlas = ExtResource("6_7vrlv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8gh5"]
+atlas = ExtResource("6_7vrlv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpx6k"]
+atlas = ExtResource("6_7vrlv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxvln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yrb60")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_omqp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8m2se")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5aeng")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7guu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10ubp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbvv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8gh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpx6k")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[node name="UTFanoCharacter" instance=ExtResource("1_hhpsi")]
+script = ExtResource("2_3c44o")
+_jump_velocity = 275.0
+
+[node name="collision" parent="." index="0"]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_wwpi0")
+
+[node name="texture" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_bxvln")
+animation = &"hurt"
+autoplay = "idle"

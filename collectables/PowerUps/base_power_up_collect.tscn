@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg6bxwlh3khq1"]
+
+[ext_resource type="PackedScene" uid="uid://b0q6rym8fqcoj" path="res://collectables/base_collectable.tscn" id="1_g3e1a"]
+[ext_resource type="Script" path="res://collectables/PowerUps/base_power_up_collect.gd" id="2_qgsfk"]
+
+[node name="BasePowerUpCollect" node_paths=PackedStringArray("_deleteTimer") instance=ExtResource("1_g3e1a")]
+script = ExtResource("2_qgsfk")
+_deleteTimer = NodePath("DeleteTimer")
+
+[node name="Song" parent="." index="2"]
+volume_db = -10.0
+
+[node name="DeleteTimer" type="Timer" parent="." index="3"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="DeleteTimer" to="." method="_on_delete_timer_timeout"]

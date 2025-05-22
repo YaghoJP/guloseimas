@@ -1,0 +1,174 @@
+[gd_scene load_steps=21 format=3 uid="uid://bqk0bh3mr2nd0"]
+
+[ext_resource type="Script" path="res://interface/Instruction/instruction.gd" id="1_6onsi"]
+[ext_resource type="Texture2D" uid="uid://cofmjhre1jq83" path="res://interface/Instruction/A.png" id="1_gobbk"]
+[ext_resource type="Texture2D" uid="uid://yg82fkn8lgu3" path="res://interface/Instruction/D.png" id="2_cy55b"]
+[ext_resource type="Texture2D" uid="uid://dlnpkqb2xaed5" path="res://interface/Instruction/S.png" id="3_y3oxh"]
+[ext_resource type="Texture2D" uid="uid://bwrylwr0e56c3" path="res://interface/Instruction/W.png" id="4_1hhbm"]
+[ext_resource type="Texture2D" uid="uid://c4686gntn2e5q" path="res://interface/Characters/char1_tela_inicio.png" id="5_boy2j"]
+[ext_resource type="Texture2D" uid="uid://ckmjuh2xms6oq" path="res://interface/Instruction/ADOWN.png" id="6_vrem0"]
+[ext_resource type="Texture2D" uid="uid://bvnwhghpcu5fl" path="res://interface/Instruction/ALEFT.png" id="7_7jib2"]
+[ext_resource type="Texture2D" uid="uid://d0hybk23osiu0" path="res://interface/Instruction/ARIGTH.png" id="8_pu04l"]
+[ext_resource type="Texture2D" uid="uid://b65upvqil2pah" path="res://interface/Instruction/AUP.png" id="9_0l5n0"]
+[ext_resource type="Texture2D" uid="uid://dgbrutn7it5iy" path="res://interface/Characters/char2_tela_inicio.png" id="10_ceqi1"]
+[ext_resource type="FontFile" uid="uid://dn85xow4aphek" path="res://fonts/RevMiniPixel.ttf" id="11_b6fvg"]
+[ext_resource type="AudioStream" uid="uid://dm2xxg6qs0ncu" path="res://songs/bg_menu.mp3" id="13_mpvmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piu7m"]
+atlas = ExtResource("5_boy2j")
+region = Rect2(0, 2880, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o477q"]
+atlas = ExtResource("5_boy2j")
+region = Rect2(0, 2400, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2leje"]
+atlas = ExtResource("5_boy2j")
+region = Rect2(0, 1920, 480, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33tah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piu7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o477q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2leje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydmrf"]
+atlas = ExtResource("10_ceqi1")
+region = Rect2(0, 2400, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxgpa"]
+atlas = ExtResource("10_ceqi1")
+region = Rect2(0, 2880, 480, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hndll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydmrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxgpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Instruction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6onsi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InstructionUTFano" type="Node2D" parent="."]
+
+[node name="A" type="Sprite2D" parent="InstructionUTFano"]
+position = Vector2(160, 400)
+texture = ExtResource("1_gobbk")
+
+[node name="D" type="Sprite2D" parent="InstructionUTFano"]
+position = Vector2(288, 400)
+texture = ExtResource("2_cy55b")
+
+[node name="S" type="Sprite2D" parent="InstructionUTFano"]
+position = Vector2(224, 400)
+texture = ExtResource("3_y3oxh")
+
+[node name="W" type="Sprite2D" parent="InstructionUTFano"]
+position = Vector2(224, 336)
+texture = ExtResource("4_1hhbm")
+
+[node name="TextureUTFano" type="AnimatedSprite2D" parent="InstructionUTFano"]
+position = Vector2(240, 144)
+scale = Vector2(0.666667, 0.6)
+sprite_frames = SubResource("SpriteFrames_33tah")
+autoplay = "default"
+frame_progress = 0.224422
+
+[node name="InstructionGDzinha" type="Node2D" parent="."]
+
+[node name="Adown" type="Sprite2D" parent="InstructionGDzinha"]
+position = Vector2(608, 400)
+texture = ExtResource("6_vrem0")
+
+[node name="Aleft" type="Sprite2D" parent="InstructionGDzinha"]
+position = Vector2(544, 400)
+texture = ExtResource("7_7jib2")
+
+[node name="Arigth" type="Sprite2D" parent="InstructionGDzinha"]
+position = Vector2(672, 400)
+texture = ExtResource("8_pu04l")
+
+[node name="Aup" type="Sprite2D" parent="InstructionGDzinha"]
+position = Vector2(608, 336)
+texture = ExtResource("9_0l5n0")
+
+[node name="TextureGdzinha" type="AnimatedSprite2D" parent="InstructionGDzinha"]
+position = Vector2(472, 88)
+scale = Vector2(1, 0.841667)
+sprite_frames = SubResource("SpriteFrames_hndll")
+autoplay = "default"
+frame_progress = 0.935382
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonBack" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_b6fvg")
+text = "VOLTAR"
+
+[node name="LabelInstruction" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 24.0
+offset_right = 96.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_b6fvg")
+theme_override_font_sizes/font_size = 32
+text = "INSTRUÇÕES"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_mpvmw")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

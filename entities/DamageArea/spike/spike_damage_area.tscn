@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ipgxo2xb3mde"]
+
+[ext_resource type="PackedScene" uid="uid://7dnda6bpq4q1" path="res://entities/DamageArea/base_damage_area.tscn" id="1_lm4wm"]
+[ext_resource type="Texture2D" uid="uid://cb11oh1uqpmlm" path="res://entities/DamageArea/spike/espinho.png" id="2_i5qiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ettn4"]
+size = Vector2(25, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6p1wu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i5qiu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="SpikeDamageArea" instance=ExtResource("1_lm4wm")]
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(-0.5, 12.5)
+shape = SubResource("RectangleShape2D_ettn4")
+
+[node name="Texture" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_6p1wu")
+animation = &"idle"
+autoplay = "idle"

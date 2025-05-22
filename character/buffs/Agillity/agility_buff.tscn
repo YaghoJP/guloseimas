@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpv4rck66tfhe"]
+
+[ext_resource type="PackedScene" uid="uid://13g1l2moijf5" path="res://character/buffs/base_buff.tscn" id="1_735ln"]
+[ext_resource type="Script" path="res://character/buffs/Agillity/AgilityBuff.gd" id="2_sf36o"]
+
+[node name="AgilityBuff" instance=ExtResource("1_735ln")]
+script = ExtResource("2_sf36o")
+_adictionalAgillity = 100.0

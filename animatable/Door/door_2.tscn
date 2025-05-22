@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://eyv7wdoaayis"]
+
+[ext_resource type="PackedScene" uid="uid://c5fohp857jbyu" path="res://animatable/base_animatable_object.tscn" id="1_rmss4"]
+[ext_resource type="Script" path="res://animatable/Door/door_2.gd" id="2_e48dk"]
+[ext_resource type="Texture2D" uid="uid://dblf4mxges2d6" path="res://animatable/Door/porta_abrindo.png" id="2_rylx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iojd"]
+size = Vector2(20, 32)
+
+[node name="door_2" instance=ExtResource("1_rmss4")]
+script = ExtResource("2_e48dk")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_rylx8")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("RectangleShape2D_1iojd")

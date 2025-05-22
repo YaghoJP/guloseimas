@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://x4aog0utvmrq"]
+
+[ext_resource type="Script" path="res://entities/Canhao/bullet/bullet.gd" id="1_2klk8"]
+[ext_resource type="Texture2D" uid="uid://bha18jodeq81t" path="res://entities/Canhao/bullet/canhao_bala.png" id="1_a0pt4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0yi4"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfy0j"]
+radius = 4.0
+
+[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("_texture")]
+script = ExtResource("1_2klk8")
+_texture = NodePath("Texture")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_k0yi4")
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_a0pt4")
+
+[node name="TimerToQueueFree" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_mfy0j")
+
+[connection signal="timeout" from="TimerToQueueFree" to="." method="_on_timer_to_queue_free_timeout"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

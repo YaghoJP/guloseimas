@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4s7r3ek5iw14"]
+
+[ext_resource type="PackedScene" uid="uid://c5fohp857jbyu" path="res://animatable/base_animatable_object.tscn" id="1_1k80k"]
+[ext_resource type="Script" path="res://animatable/Door/door_animatable.gd" id="2_e156u"]
+[ext_resource type="Texture2D" uid="uid://c3uopdgo34pge" path="res://animatable/Door/porta-subir.png" id="3_jlg0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfra3"]
+size = Vector2(16, 128)
+
+[node name="DoorAnimatable" instance=ExtResource("1_1k80k")]
+script = ExtResource("2_e156u")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_jlg0f")
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("RectangleShape2D_cfra3")

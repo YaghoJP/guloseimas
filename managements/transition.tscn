@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw0wx58rbihgd"]
+
+[ext_resource type="Script" path="res://managements/transition.gd" id="1_yu76b"]
+
+[sub_resource type="Animation" id="Animation_hs5yv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_8gvf1"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, -240), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.0001),
+"transitions": PackedFloat32Array(-2, 1, 1),
+"update": 0,
+"values": [Vector2(0, 480), Vector2(0, 240), Vector2(0, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_qhgfq"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 240), Vector2(0, 480)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ggp7"]
+_data = {
+"RESET": SubResource("Animation_hs5yv"),
+"fade_in": SubResource("Animation_8gvf1"),
+"fade_out": SubResource("Animation_qhgfq")
+}
+
+[node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("_animation")]
+layer = 2
+script = ExtResource("1_yu76b")
+_animation = NodePath("Animation")
+
+[node name="UP" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(800, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 800.0
+offset_bottom = 240.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Down" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(800, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 240.0
+offset_right = 800.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8ggp7")
+}
+autoplay = "fade_out"
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

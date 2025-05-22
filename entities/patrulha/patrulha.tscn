@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmt6y83g1mkj3"]
+
+[ext_resource type="PackedScene" uid="uid://b50e2r2k33oc5" path="res://entities/base_enemy.tscn" id="1_gi6sn"]
+[ext_resource type="Script" path="res://entities/patrulha/patrulha.gd" id="2_ouspm"]
+[ext_resource type="Texture2D" uid="uid://i03xw1f8owhb" path="res://entities/patrulha/hurt.png" id="3_tytos"]
+[ext_resource type="Texture2D" uid="uid://qbt078b6m8hd" path="res://entities/patrulha/standing.png" id="4_gmjyd"]
+[ext_resource type="Texture2D" uid="uid://bv34fb33tjw12" path="res://entities/patrulha/walk.png" id="5_3xju5"]
+[ext_resource type="Script" path="res://entities/DamageArea/base_damage_area.gd" id="6_wjdkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbqgj"]
+size = Vector2(20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy1nb"]
+atlas = ExtResource("5_3xju5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwbna"]
+atlas = ExtResource("5_3xju5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufltw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tytos")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gmjyd")
+}],
+"loop": false,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy1nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwbna")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vew8u"]
+size = Vector2(22, 6)
+
+[node name="Patrulha" instance=ExtResource("1_gi6sn")]
+script = ExtResource("2_ouspm")
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_nbqgj")
+
+[node name="Texture" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_ufltw")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="WallDetection" parent="." index="2"]
+target_position = Vector2(12, 0)
+
+[node name="FloorDetection" parent="." index="3"]
+position = Vector2(10, 0)
+target_position = Vector2(0, 12)
+
+[node name="BaseDamageArea" type="Area2D" parent="." index="4"]
+script = ExtResource("6_wjdkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDamageArea" index="0"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_vew8u")
+
+[connection signal="body_entered" from="BaseDamageArea" to="BaseDamageArea" method="_on_body_entered"]

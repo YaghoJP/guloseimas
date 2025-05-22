@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://cykt7ffcdnqc4"]
+
+[ext_resource type="Script" path="res://interface/credits.gd" id="1_1kp6r"]
+[ext_resource type="FontFile" uid="uid://dn85xow4aphek" path="res://fonts/RevMiniPixel.ttf" id="1_hatpu"]
+[ext_resource type="AudioStream" uid="uid://dm2xxg6qs0ncu" path="res://songs/bg_menu.mp3" id="3_em8jf"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1kp6r")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = 120.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelYagho" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_hatpu")
+text = "Desenvolvimento: Yagho Petini"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelPamella" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_hatpu")
+text = "Pixel Art:	 Pamella Lissa"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelThaynara" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_hatpu")
+text = "Som: Thaynara Falcão"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 280.0
+offset_top = 416.0
+offset_right = 520.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("1_hatpu")
+text = "VOLTAR
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.0
+offset_top = 32.0
+offset_right = 76.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_hatpu")
+theme_override_font_sizes/font_size = 32
+text = "CRÉDITOS"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_em8jf")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

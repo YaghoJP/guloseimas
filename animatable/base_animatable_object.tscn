@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5fohp857jbyu"]
+
+[ext_resource type="Script" path="res://animatable/base_animatable_object.gd" id="1_cufgu"]
+
+[node name="BaseAnimatableObject" type="AnimatableBody2D"]
+script = ExtResource("1_cufgu")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
