@@ -23,7 +23,7 @@ Para jogar Guloseimas, você precisará da Engine Godot. Siga as instruções ab
 
     Clone o repositório do projeto usando o Git:
     ```bash
-    git clone https://github.com/zYagho/Guloseimas.git
+    git clone https://github.com/yaghojp/guloseimas.git
     ```
 
 2. **Instalar a Engine**: 
